@@ -63,6 +63,9 @@ func (s *inputImageTagStep) Run(ctx context.Context) error {
 }
 
 func (s *inputImageTagStep) run(ctx context.Context) error {
+
+	fmt.Printf("Config Baseimage: %#v\n", s.config.BaseImage)
+
 	logrus.Infof("Tagging %s into %s:%s.", s.config.BaseImage.ISTagName(), api.PipelineImageStream, s.config.To)
 
 	if _, err := s.Inputs(); err != nil {

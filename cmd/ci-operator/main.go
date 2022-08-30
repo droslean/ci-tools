@@ -180,6 +180,8 @@ var (
 const CustomProwMetadata = "custom-prow-metadata.json"
 
 func main() {
+	fmt.Println("What the hell is happening?")
+
 	censor, closer, err := setupLogger()
 	if err != nil {
 		logrus.WithError(err).Fatal("Could not set up logging.")

@@ -397,6 +397,8 @@ func (m *MultiArchImageStreamTagReference) ISTagName() string {
 func (m *MultiArchImageStreamTagReference) ResolveNamespace() string {
 	var ret string
 	arch := runtime.GOARCH
+
+	fmt.Printf("Architecture: %s\n", arch)
 	if arch == "amd64" {
 		return m.ImageStreamTagReference.Namespace
 	}
